@@ -1,0 +1,223 @@
+Here is a simple example of ARIA (Accessible Rich Internet Applications) tables and grids, complete with annotations to explain the code. 
+
+---
+
+### Accessible Table Example
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Table Example</title>
+</head>
+<body>
+    <h1>Accessible Table</h1>
+    <table role="table" aria-label="Sales Data" border="1">
+        <thead>
+            <tr>
+                <th role="columnheader" scope="col">Product</th>
+                <th role="columnheader" scope="col">Price</th>
+                <th role="columnheader" scope="col">Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td role="cell">Apples</td>
+                <td role="cell">$2</td>
+                <td role="cell">50</td>
+            </tr>
+            <tr>
+                <td role="cell">Oranges</td>
+                <td role="cell">$1.5</td>
+                <td role="cell">75</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+```
+
+---
+
+### Accessible Grid Example
+Grids are more interactive than tables and often include keyboard navigation.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Grid Example</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 5px;
+            border: 1px solid #ccc;
+        }
+        .grid-cell {
+            padding: 10px;
+            border: 1px solid #aaa;
+            text-align: center;
+        }
+        .grid-cell:focus {
+            outline: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Accessible Grid</h1>
+    <div 
+        role="grid" 
+        aria-label="Product Grid" 
+        tabindex="0"
+    >
+        <div role="row" class="grid">
+            <div role="gridcell" tabindex="0" class="grid-cell">Apples</div>
+            <div role="gridcell" tabindex="0" class="grid-cell">$2</div>
+            <div role="gridcell" tabindex="0" class="grid-cell">50</div>
+        </div>
+        <div role="row" class="grid">
+            <div role="gridcell" tabindex="0" class="grid-cell">Oranges</div>
+            <div role="gridcell" tabindex="0" class="grid-cell">$1.5</div>
+            <div role="gridcell" tabindex="0" class="grid-cell">75</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('keydown', (e) => {
+            const focused = document.activeElement;
+            if (focused.classList.contains('grid-cell')) {
+                if (e.key === 'ArrowRight') {
+                    const next = focused.nextElementSibling;
+                    if (next) next.focus();
+                } else if (e.key === 'ArrowLeft') {
+                    const prev = focused.previousElementSibling;
+                    if (prev) prev.focus();
+                } else if (e.key === 'ArrowDown') {
+                    const row = focused.parentElement.nextElementSibling;
+                    if (row) row.children[Array.from(focused.parentElement.children).indexOf(focused)].focus();
+                } else if (e.key === 'ArrowUp') {
+                    const row = focused.parentElement.previousElementSibling;
+                    if (row) row.children[Array.from(focused.parentElement.children).indexOf(focused)].focus();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+```
+
+---
+
+### Key Notes:
+1. **ARIA Roles**:
+   - Use `role="table"` and `role="grid"` to specify the structure.
+   - Use `role="columnheader"`, `role="row"`, and `role="gridcell"` for specific elements within tables and grids.
+
+2. **Keyboard Navigation**:
+   - Implement JavaScript for `Arrow` key navigation in grids.
+
+3. **Screen Reader Support**:
+   - Add `aria-label` or `aria-labelledby` to provide descriptive context.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Grid Example</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 5px;
+            border: 1px solid #ccc;
+        }
+        .grid-cell {
+            padding: 10px;
+            border: 1px solid #aaa;
+            text-align: center;
+        }
+        .grid-cell:focus {
+            outline: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Accessible Grid</h1>
+    <div 
+        role="grid" 
+        aria-label="Product Grid" 
+        tabindex="0"
+    >
+        <div role="row" class="grid">
+            <div role="gridcell" tabindex="0" class="grid-cell">Apples</div>
+            <div role="gridcell" tabindex="0" class="grid-cell">$2</div>
+            <div role="gridcell" tabindex="0" class="grid-cell">50</div>
+        </div>
+        <div role="row" class="grid">
+            <div role="gridcell" tabindex="0" class="grid-cell">Oranges</div>
+            <div role="gridcell" tabindex="0" class="grid-cell">$1.5</div>
+            <div role="gridcell" tabindex="0" class="grid-cell">75</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('keydown', (e) => {
+            const focused = document.activeElement;
+            if (focused.classList.contains('grid-cell')) {
+                if (e.key === 'ArrowRight') {
+                    const next = focused.nextElementSibling;
+                    if (next) next.focus();
+                } else if (e.key === 'ArrowLeft') {
+                    const prev = focused.previousElementSibling;
+                    if (prev) prev.focus();
+                } else if (e.key === 'ArrowDown') {
+                    const row = focused.parentElement.nextElementSibling;
+                    if (row) row.children[Array.from(focused.parentElement.children).indexOf(focused)].focus();
+                } else if (e.key === 'ArrowUp') {
+                    const row = focused.parentElement.previousElementSibling;
+                    if (row) row.children[Array.from(focused.parentElement.children).indexOf(focused)].focus();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Table Example</title>
+</head>
+<body>
+    <h1>Accessible Table</h1>
+    <table role="table" aria-label="Sales Data" border="1">
+        <thead>
+            <tr>
+                <th role="columnheader" scope="col">Product</th>
+                <th role="columnheader" scope="col">Price</th>
+                <th role="columnheader" scope="col">Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td role="cell">Apples</td>
+                <td role="cell">$2</td>
+                <td role="cell">50</td>
+            </tr>
+            <tr>
+                <td role="cell">Oranges</td>
+                <td role="cell">$1.5</td>
+                <td role="cell">75</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

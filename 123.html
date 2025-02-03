@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive JavaScript Learning</title>
+    <script>
+        function showAlert() {
+            alert("Hello! This is an alert example.");
+        }
+
+        function changeText() {
+            document.getElementById("dynamicText").innerHTML = "Text changed using innerHTML!";
+        }
+
+        function logToConsole() {
+            console.log("This message is logged in the console.");
+            alert("Check the console for output!");
+        }
+
+        function showAddition() {
+            let a = 100, b = 20;
+            document.getElementById("result").innerHTML = "Addition Result: " + (a + b);
+        }
+
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            if (name === "") {
+                alert("Name field cannot be empty!");
+                return false;
+            } else {
+                alert("Form submitted successfully!");
+                return true;
+            }
+        }
+
+        function numberGame() {
+            let userNum = prompt("Enter a number:");
+            if (userNum > 10) {
+                alert("Your number is greater than 10!");
+            } else {
+                alert("Your number is 10 or less!");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Learn JavaScript Interactively</h1>
+
+    <h2>1. Alert Box Example</h2>
+    <button onclick="showAlert()">Click for Alert</button>
+
+    <h2>2. Changing Text with JavaScript</h2>
+    <p id="dynamicText">Click the button to change this text.</p>
+    <button onclick="changeText()">Change Text</button>
+
+    <h2>3. Console Log Example</h2>
+    <button onclick="logToConsole()">Log Message</button>
+
+    <h2>4. Addition Operator Example</h2>
+    <button onclick="showAddition()">Perform Addition</button>
+    <p id="result"></p>
+
+    <h2>5. Simple Form with Validation</h2>
+    <form onsubmit="return validateForm()">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name" aria-required="true">
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>6. Number Guessing Game</h2>
+    <button onclick="numberGame()">Play the Game</button>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics</title>
+</head>
+<body>
+    <h1>JavaScript Basics for Kids 🚀</h1>
+
+    <h2>Click the buttons to see JavaScript in action!</h2>
+
+    <!-- Button for Alert -->
+    <button onclick="showAlert()">Click Me</button>
+
+    <!-- Button for Changing Background -->
+    <button onclick="changeColor()">Change Background Color</button>
+
+    <!-- Button for Loop Example -->
+    <button onclick="runLoop()">Run Loop</button>
+
+    <script>
+        // 1️⃣ Show an alert when the button is clicked
+        function showAlert() {
+            alert("Hello! JavaScript is magic! 🎩✨");
+        }
+
+        // 2️⃣ Variables Example
+        let car = "red";  // String
+        let age = 25;  // Number
+        let isHappy = true;  // Boolean
+        let fruits = ["Apple", "Mango", "Banana"];  // Array
+        let vehicle = { brand: "Toyota", color: "Red" };  // Object
+
+        console.log("Car color:", car);
+        console.log("Age:", age);
+        console.log("Happy?", isHappy);
+        console.log("Fruits:", fruits);
+        console.log("Vehicle brand:", vehicle.brand);
+
+        // 3️⃣ Operators Example
+        let x = 10;
+        let y = 5;
+        console.log("Addition:", x + y);
+        console.log("Comparison (x > y):", x > y);
+
+        // 4️⃣ Function Example
+        function greet(name) {
+            console.log("Hello, " + name + "! 🎉");
+        }
+        greet("Amit");
+
+        // 5️⃣ If-Else Example
+        let fuel = 0;
+        if (fuel > 0) {
+            console.log("Car Chalo 🚗💨");
+        } else {
+            console.log("Fuel Khatam! ⛽");
+        }
+
+        // 6️⃣ Loops Example
+        function runLoop() {
+            for (let i = 1; i <= 5; i++) {
+                console.log("Loop Chala " + i);
+            }
+        }
+
+        // 7️⃣ Array Example
+        let cars = ["BMW", "Audi", "Tesla"];
+        console.log("First car:", cars[0]);
+        console.log("Total cars:", cars.length);
+
+        // 8️⃣ Object Example
+        let spaceship = {
+            name: "Falcon",
+            speed: "Light Speed",
+            launch: function() {
+                console.log("Spaceship is launching 🚀");
+            }
+        };
+        spaceship.launch();
+
+        // 9️⃣ Event Example (Changing Background Color)
+        function changeColor() {
+            document.body.style.backgroundColor = "lightblue";
+        }
+    </script>
+
+</body>
+</html>

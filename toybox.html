@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Toy Box - JavaScript Arrays</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 90%;
+            max-width: 500px;
+        }
+        .toy-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .toy-list li {
+            background: #ffcc00;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Interactive Toy Box 🎁</h1>
+    <div class="box">
+        <h2>My Toys 🧸</h2>
+        <ul id="toyList" class="toy-list"></ul>
+        <button onclick="addToy()">Add Teddy Bear 🧸</button>
+        <button onclick="removeLastToy()">Remove Last Toy ❌</button>
+        <button onclick="changeToy()">Change Second Toy 🤖</button>
+        <button onclick="showToyCount()">Show Toy Count 🎯</button>
+    </div>
+
+    <script>
+        let toyBox = ["Car 🚗", "Doll 🏠", "Ball ⚽", "Puzzle 🧩"];
+        
+        function updateToyList() {
+            let toyList = document.getElementById("toyList");
+            toyList.innerHTML = "";
+            toyBox.forEach((toy, index) => {
+                let li = document.createElement("li");
+                li.textContent = "Toy #" + (index + 1) + ": " + toy;
+                toyList.appendChild(li);
+            });
+        }
+
+        function addToy() {
+            toyBox.push("Teddy Bear 🧸");
+            updateToyList();
+        }
+
+        function removeLastToy() {
+            toyBox.pop();
+            updateToyList();
+        }
+
+        function changeToy() {
+            if (toyBox.length > 1) {
+                toyBox[1] = "Robot 🤖";
+                updateToyList();
+            } else {
+                alert("Not enough toys to change!");
+            }
+        }
+
+        function showToyCount() {
+            alert("You have " + toyBox.length + " toys in the toy box!");
+        }
+
+        updateToyList();
+    </script>
+
+</body>
+</html>

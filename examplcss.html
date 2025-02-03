@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete CSS Elements</title>
+    <style>
+        /* Headings */
+        h1 { color: blue; font-size: 2em; text-align: center; }
+        h2 { color: green; font-size: 1.8em; text-align: left; }
+        h3 { color: red; font-size: 1.6em; text-align: right; }
+
+        /* Lists */
+        ul { list-style-type: square; color: purple; font-size: 1.2em; }
+        ol { list-style-type: decimal; color: orange; font-size: 1.2em; }
+
+        /* Links */
+        a { color: blue; text-decoration: none; font-size: 1.2em; }
+        a:hover { color: red; text-decoration: underline; }
+
+        /* Buttons */
+        button {
+            background-color: blue; color: white; padding: 10px 20px;
+            border: none; font-size: 1.2em; cursor: pointer;
+        }
+        button:hover { background-color: green; }
+
+        /* Navigation */
+        nav {
+            background-color: black; padding: 10px;
+        }
+        nav a {
+            color: white; text-decoration: none; margin: 15px; font-size: 1.2em;
+        }
+        nav a:hover { color: yellow; }
+
+        /* Tables */
+        table {
+            width: 100%; border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black; padding: 10px; text-align: center;
+        }
+        th { background-color: gray; color: white; }
+
+        /* Paragraph */
+        p {
+            font-size: 1.2em; color: brown; line-height: 1.5;
+        }
+
+        /* Div & Span */
+        .box {
+            width: 200px; height: 100px; background-color: lightblue;
+            text-align: center; padding: 10px; border-radius: 10px;
+        }
+        .highlight { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>Main Heading</h1>
+    <h2>Subheading</h2>
+    <h3>Small Heading</h3>
+
+    <h2>Unordered List</h2>
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Mango</li>
+    </ul>
+
+    <h2>Ordered List</h2>
+    <ol>
+        <li>Step 1</li>
+        <li>Step 2</li>
+        <li>Step 3</li>
+    </ol>
+
+    <h2>Links</h2>
+    <a href="https://www.google.com">Visit Google</a>
+
+    <h2>Button</h2>
+    <button>Click Me</button>
+
+    <h2>Navigation Bar</h2>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <h2>Table</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+        </tr>
+        <tr>
+            <td>Amit</td>
+            <td>22</td>
+            <td>Mumbai</td>
+        </tr>
+        <tr>
+            <td>Sneha</td>
+            <td>25</td>
+            <td>Delhi</td>
+        </tr>
+    </table>
+
+    <h2>Paragraph</h2>
+    <p>This is a styled paragraph. The font is larger, the color is brown, and the line spacing is improved.</p>
+
+    <h2>Div & Span</h2>
+    <div class="box">This is a Box</div>
+    <p>This is a normal text with a <span class="highlight">highlighted</span> word.</p>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy Box - Interactive HTML Elements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #0073e6;
+        }
+
+        nav {
+            background: black;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            color: yellow;
+        }
+
+        button {
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: green;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: gray;
+            color: white;
+        }
+
+        .toy-box {
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 3px solid darkblue;
+        }
+
+        .form-box {
+            background: lightgray;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            padding: 10px;
+            background: black;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Toys</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="container">
+        <h1>Welcome to the Toy Box 🎁</h1>
+        <p>This page contains all HTML elements in an interactive and accessible way.</p>
+
+        <h2>Unordered List</h2>
+        <ul>
+            <li>Car Toy</li>
+            <li>Robot</li>
+            <li>Building Blocks</li>
+        </ul>
+
+        <h2>Ordered List</h2>
+        <ol>
+            <li>Step 1: Open the box</li>
+            <li>Step 2: Take out the toys</li>
+            <li>Step 3: Enjoy playing!</li>
+        </ol>
+
+        <h2>Interactive Toy Box</h2>
+        <div class="toy-box">
+            Open the Toy Box 🎁
+        </div>
+
+        <h2>Button Interaction</h2>
+        <button onclick="alert('You clicked the toy! 🎉')">Click to Play</button>
+
+        <h2>Table Example</h2>
+        <table>
+            <tr>
+                <th>Toy Name</th>
+                <th>Price</th>
+                <th>Category</th>
+            </tr>
+            <tr>
+                <td>Teddy Bear</td>
+                <td>$10</td>
+                <td>Stuffed Toy</td>
+            </tr>
+            <tr>
+                <td>RC Car</td>
+                <td>$20</td>
+                <td>Remote Control</td>
+            </tr>
+        </table>
+
+        <h2>Form Example</h2>
+        <div class="form-box">
+            <form>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+                <label for="toy-choice">Choose a Toy:</label>
+                <select id="toy-choice">
+                    <option value="car">Car</option>
+                    <option value="robot">Robot</option>
+                    <option value="puzzle">Puzzle</option>
+                </select>
+
+                <label for="feedback">Your Feedback:</label>
+                <textarea id="feedback" placeholder="Write your thoughts..."></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <h2>Audio & Video</h2>
+        <audio controls>
+            <source src="toy-music.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <video width="100%" controls>
+            <source src="toy-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Toy Box | All Rights Reserved</p>
+    </div>
+
+</body>
+</html>

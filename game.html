@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spaceship Adventure</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: white;
+      text-align: center;
+    }
+    #gameArea {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      border: 3px solid white;
+      background-color: #00274d;
+      overflow: hidden;
+    }
+    #spaceship {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #ffcc00;
+      border-radius: 50%;
+      bottom: 0;
+      left: 10px;
+      transition: transform 1s ease;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Spaceship Adventure</h1>
+  <p>Navigate the spaceship, but watch your fuel!</p>
+
+  <div id="gameArea" role="region" aria-label="Spaceship Game Area">
+    <div id="spaceship" role="img" aria-label="Spaceship" aria-live="polite"></div>
+  </div>
+
+  <div id="fuelStatus">
+    <p>Fuel Level: <span id="fuel">1000</span> liters</p>
+    <p>Speed: <span id="speed">0</span> km/h</p>
+  </div>
+
+  <button id="startBtn" aria-label="Start the spaceship">Start Spaceship</button>
+  <button id="stopBtn" class="hidden" aria-label="Stop the spaceship">Stop Spaceship</button>
+
+  <script src="game.js"></script>
+</body>
+</html>

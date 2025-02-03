@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy Car & Spaceship</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Toy Car & Spaceship Zone! 🚗🚀</h1>
+    </header>
+
+    <!-- Car Section -->
+    <section id="car-section">
+        <h2>Control Your Toy Car</h2>
+        <div id="car"></div>
+        <button onclick="moveCar()">Move Car</button>
+        <button onclick="changeCarColor()">Change Color</button>
+    </section>
+
+    <!-- Spaceship Section -->
+    <section id="spaceship-section">
+        <h2>Launch Your Spaceship</h2>
+        <div id="spaceship"></div>
+        <button onclick="launchSpaceship()">Launch 🚀</button>
+    </section>
+
+    <!-- Form Section -->
+    <section id="form-section">
+        <h2>Join the Adventure</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

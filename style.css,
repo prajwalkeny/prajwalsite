@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: blue;
+}
+
+/* Car Styling */
+#car {
+    width: 100px;
+    height: 50px;
+    background-color: red;
+    position: relative;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+/* Spaceship Styling */
+#spaceship {
+    width: 80px;
+    height: 120px;
+    background-color: gray;
+    position: relative;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+/* Buttons */
+button {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* Form */
+input {
+    padding: 5px;
+    margin: 5px;
+}

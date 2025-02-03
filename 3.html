@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychology Patient Records</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Psychology Patient Records</h1>
+        <nav>
+            <a href="#formSection">Add Patient</a> | 
+            <a href="#recordsSection">View Records</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="formSection">
+            <h2>Add Patient Record</h2>
+            <form id="patientForm" aria-labelledby="formTitle">
+                <fieldset>
+                    <legend id="formTitle">Patient Information</legend>
+
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" min="1" required>
+
+                    <fieldset>
+                        <legend>Gender:</legend>
+                        <label><input type="radio" name="gender" value="Male" required> Male</label>
+                        <label><input type="radio" name="gender" value="Female" required> Female</label>
+                        <label><input type="radio" name="gender" value="Other" required> Other</label>
+                    </fieldset>
+
+                    <label for="disorder">Type of Disorder:</label>
+                    <select id="disorder" name="disorder" required>
+                        <option value="">-- Select --</option>
+                        <option value="Anxiety">Anxiety</option>
+                        <option value="Depression">Depression</option>
+                        <option value="OCD">OCD</option>
+                        <option value="PTSD">PTSD</option>
+                        <option value="Bipolar Disorder">Bipolar Disorder</option>
+                        <option value="Schizophrenia">Schizophrenia</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label for="reason">Reason for Consultation:</label>
+                    <textarea id="reason" name="reason" required></textarea>
+
+                    <button type="submit">Add Record</button>
+                </fieldset>
+            </form>
+            <p id="message" aria-live="polite"></p>
+        </section>
+
+        <section id="recordsSection">
+            <h2>Stored Patient Records</h2>
+            <table id="recordsTable" aria-label="Patient Records">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Disorder</th>
+                        <th>Reason</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

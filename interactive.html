@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My First JS Project</title>
+</head>
+<body>
+    <h1 id="title">🚀 Click the button to see magic!</h1>
+    <button onclick="showMessage()">Click Me!</button>
+    <button onclick="changeText()">Change Text</button>
+
+    <script>
+        function showMessage() {
+            alert("Hello, Kiddo! 🎉 You just used JavaScript!");
+        }
+
+        function changeText() {
+            document.getElementById("title").innerText = "🎉 JavaScript is Fun!";
+        }
+    </script>
+</body>
+</html>
